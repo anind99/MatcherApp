@@ -9,6 +9,8 @@ import "./assets/demo/demo.css";
 
 import Home from "./views/Home/index.js"
 import LoginPage from "./views/Login";
+import SurveyPage from "./views/Survey"
+import ProfilePage from "./views/Profile";
 class App extends React.Component {
 
   // a 'global' state that you can pass through to any child componenets of App.
@@ -30,6 +32,12 @@ class App extends React.Component {
                 path="/login"
                 render={(props) => <LoginPage {...props} />}
             />
+              <Route exact path='/survey' render={() =>
+                  (<SurveyPage appState={this.state}/>)}
+              />
+              <Route exact path='/profile' render={() =>
+                  (<ProfilePage appState={this.state}/>)}
+              />
             </Switch>
           </BrowserRouter>
         </div>
