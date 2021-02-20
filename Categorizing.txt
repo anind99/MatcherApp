@@ -1,0 +1,42 @@
+					Type 1		Type 2		Type3
+1: Internet usage_no time at all
+2: Rock					-0.28		+0.44
+3: Cars					-0.45		-0.28		0.63
+4: Reliability				
+5: Decision making
+6: Movies
+7: Elections						+ 0.55
+8: Celebrities				+0.75		- 0.39		-0.37
+9: Self-criticism					+ 0.32
+10: Judgment calls
+11: Hypochondria			+0.29		
+12: Empathy				+0.25		+0.26		-0.44
+13: Art exhibitions					+1.04		-0.72
+14: Theatre						+0.95		-0.82
+15: Eating to survive
+16: Giving								-0.46
+17: Storm								-0.56
+18: Classical music					+1.01		-0.36
+19: Rats				+0.9		-0.32		-0.61
+20: Flying				+0.44				-0.33
+21: Compassion to animals
+22: Borrowed stuff
+23: Loneliness
+24: Musical instruments					1.27		-0.63
+25: Cheating in school					-0.37
+26: Health				+0.44				-0.35
+27: Law
+28: Dance
+29: Changing the past
+30: Appearence and gestures		
+31: Romantic				+0.57				-0.61
+32: God					+0.40				-0.44
+33: Science and technology				+0.37
+34: Physics						+0.39
+35: Dreams		
+36: Charity						+0.33
+37: Foreign languages					+0.41
+38: Number of friends
+39: Darkness				+0.80
+40: Prioritising workload						-0.63
+
