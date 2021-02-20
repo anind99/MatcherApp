@@ -2,7 +2,6 @@ import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
