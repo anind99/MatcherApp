@@ -1,42 +1,55 @@
-					Type 1		Type 2		Type3
-1: Internet usage_no time at all
-2: Rock					-0.28		+0.44
-3: Cars					-0.45		-0.28		0.63
-4: Reliability				
-5: Decision making
-6: Movies
-7: Elections						+ 0.55
-8: Celebrities				+0.75		- 0.39		-0.37
-9: Self-criticism					+ 0.32
-10: Judgment calls
-11: Hypochondria			+0.29		
-12: Empathy				+0.25		+0.26		-0.44
-13: Art exhibitions					+1.04		-0.72
-14: Theatre						+0.95		-0.82
-15: Eating to survive
-16: Giving								-0.46
-17: Storm								-0.56
-18: Classical music					+1.01		-0.36
-19: Rats				+0.9		-0.32		-0.61
-20: Flying				+0.44				-0.33
-21: Compassion to animals
-22: Borrowed stuff
-23: Loneliness
-24: Musical instruments					1.27		-0.63
-25: Cheating in school					-0.37
-26: Health				+0.44				-0.35
-27: Law
-28: Dance
-29: Changing the past
-30: Appearence and gestures		
-31: Romantic				+0.57				-0.61
-32: God					+0.40				-0.44
-33: Science and technology				+0.37
-34: Physics						+0.39
-35: Dreams		
-36: Charity						+0.33
-37: Foreign languages					+0.41
-38: Number of friends
-39: Darkness				+0.80
-40: Prioritising workload						-0.63
+					Differences with other Types
 
+type 3:
+
+Rock: 1.003044526761375
+Elections: -0.5564391105298276
+Hypochondria: -0.6958835484656007
+Empathy: -1.1879812252075126
+Art exhibitions: -1.345316379962691
+Eating to survive: -0.7271569763509826
+Giving: -0.8668305875323576
+Storm: -0.6358592758583415
+Classical music: -0.928970432470976
+Rats: -0.518039784603243
+Loneliness: -1.0717431411778553
+Cheating in school: -0.5470162745754825
+Appearence and gestures: -0.96868044191269
+Romantic: -0.7185770117427661
+Charity: -0.7047052805967713
+Number of friends: -0.9722810739164258
+
+Type 2:
+
+Movies: 0.7836931000933522
+Elections: -0.5786415168089667
+Celebrities: 0.4395410384394385
+Empathy: 1.4455364869261818
+Art exhibitions: 1.314735584078916
+Storm: 1.4199749099628987
+Classical music: -0.4906392567619018
+Loneliness: 1.7794396292116943
+Musical instruments: -0.5109007996966723
+God: 0.5460685884877123
+Science and technology: 0.5745014476762358
+Dreams: 0.4608304661160685
+Charity: 0.5527792614587952
+
+Type 1:
+
+Rock: -0.6355691415176077
+Movies: -0.465875259673763
+Elections: 1.1350806273387946
+Judgment calls: 0.4291014076301618
+Eating to survive: 0.5987948101991813
+Giving: 1.1802984497589515
+Storm: -0.7841156341045572
+Classical music: 1.419609689232878
+Rats: 0.654143863391764
+Loneliness: -0.7076964880338388
+Cheating in school: 0.6533113896467055
+Appearence and gestures: 0.8180608593823635
+Romantic: 0.5789733081199273
+God: -1.0101851758166447
+Science and technology: -0.9137388655138865
+Number of friends: 1.1668396937540373
