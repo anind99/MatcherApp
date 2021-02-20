@@ -15,8 +15,13 @@ def find_matches(user_data, num):
     return [Chosen[diff.index(i)][40] for i in range(1, num+1)]
 
 
-def get_category_and_description(Chosen, user_data, columns):
-    
+def get_type_and_description(user_data, columns):
+    '''
+    Get the Type and Description of the user eg. "You are a Type 2 individual, Properties of Type 2 include.."
+    :param user_data: Row from Array
+    :param columns: Column Names
+    :return: type 1, 2, or 3
+    '''
     km = KMeans(n_clusters=3)
     km.fit(Chosen)
     cat = km.predict(user_data)
@@ -38,4 +43,4 @@ def get_category_and_description(Chosen, user_data, columns):
         if abs(diff[i]) > 0.5:
             print(f'{columns[i]}: {diff[i]}')
 
-    return cat
+    return cat + 1
