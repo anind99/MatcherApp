@@ -130,7 +130,7 @@ export default function Signup() {
                 </Form>
               </CardBody>
               <CardFooter>
-                <Button className="btn-round" color="primary" size="lg">
+                <Button className="btn-round" color="primary" size="lg" to="survey" tag={Link}>
                   Get Started
                 </Button>
               </CardFooter>

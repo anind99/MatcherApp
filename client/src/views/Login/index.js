@@ -17,6 +17,7 @@
 */
 import React from "react";
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 // reactstrap components
 import {
     Button,
@@ -139,7 +140,7 @@ export default function LoginPage() {
                                             </Form>
                                         </CardBody>
                                         <CardFooter>
-                                            <Button className="btn-round" color="primary" size="lg">
+                                            <Button className="btn-round" color="primary" size="lg" to="profile" tag={Link}>
                                                 Get Started
                                             </Button>
                                         </CardFooter>

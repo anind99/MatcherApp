@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "reactstrap": "^8.9.0"
+    "reactstrap": "^8.9.0",
+    "survey-react": "^1.8.31"
   }
 }
