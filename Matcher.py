@@ -11,4 +11,4 @@ def find_matches(user_data, num):
     '''
 
     diff = list(np.argsort([np.linalg.norm(Chosen[i, :38] - user_data[:38], ) for i in range(1010)]))
-    return [Chosen[diff.index(i)][40] for i in range(1,num+1)]
+    return [Chosen[diff.index(i)][40] for i in range(1, num+1)]
