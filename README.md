@@ -13,7 +13,7 @@ cd client
 npm install
 npm start
 ```
-##Navigate the web app:
+## Navigate the web app:
 * Home Page
 * Register User
 * Login
