@@ -21,8 +21,10 @@ npm start
 * View Results - Matches and Personality Description
 
 
-https://devpost.com/software/matcher
+Devpost: https://devpost.com/software/matcher
 
 Data Source: https://www.kaggle.com/miroslavsabo/young-people-survey
 
 Slide deck: https://docs.google.com/presentation/d/10OUnE7nkPTbnx7FYTaJYwTWs6Y9fNPGQQcXFxWdLNhc/edit?usp=sharing
+
+Video: https://youtu.be/aCuWd_UPl2g
