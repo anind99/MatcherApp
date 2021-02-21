@@ -17,7 +17,7 @@
 */
 import React from "react";
 import classnames from "classnames";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 // reactstrap components
 import {
     Button,
@@ -39,9 +39,31 @@ import {
     Col,
 } from "reactstrap";
 import Navbars from "../../components/Navbars/Navbar";
+import firebase from "firebase";
+import ProfilePage from "../Profile";
+
+const signInWithEmailPassword = async (email, password) => {
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Signed in
+            console.log(userCredential)
+            var user = userCredential.user;
+            // ...
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
+
+}
+
+export default function LoginPage(props) {
 
 
-export default function LoginPage() {
+
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
     const [squares1to6, setSquares1to6] = React.useState("");
     const [squares7and8, setSquares7and8] = React.useState("");
     const [emailFocus, setEmailFocus] = React.useState(false);
@@ -73,8 +95,12 @@ export default function LoginPage() {
             "deg)"
         );
     };
+
     return (
+
+
         <>
+            {props.user ? <Redirect to={"/profile"} /> : null}
             <Navbars/>
             <div className="wrapper">
                 <div className="page-header">
@@ -116,8 +142,10 @@ export default function LoginPage() {
                                                     <Input
                                                         placeholder="Email"
                                                         type="email"
+                                                        value={email}
                                                         onFocus={(e) => setEmailFocus(true)}
                                                         onBlur={(e) => setEmailFocus(false)}
+                                                        onChange={(e) => setEmail(e.target.value)}
                                                     />
                                                 </InputGroup>
                                                 <InputGroup
@@ -133,6 +161,8 @@ export default function LoginPage() {
                                                     <Input
                                                         placeholder="Password"
                                                         type="password"
+                                                        value={password}
+                                                        onChange={(e) => setPassword(e.target.value)}
                                                         onFocus={(e) => setPasswordFocus(true)}
                                                         onBlur={(e) => setPasswordFocus(false)}
                                                     />
@@ -140,7 +170,8 @@ export default function LoginPage() {
                                             </Form>
                                         </CardBody>
                                         <CardFooter>
-                                            <Button className="btn-round" color="primary" size="lg" to="profile" tag={Link}>
+                                            <Button className="btn-round" color="primary" size="lg" onClick={()=>signInWithEmailPassword(email,password)
+                                            } to="/profile" tag={Link}>
                                                 Get Started
                                             </Button>
                                         </CardFooter>
@@ -182,6 +213,7 @@ export default function LoginPage() {
                     </div>
                 </div>
             </div>
+
         </>
     );
 }

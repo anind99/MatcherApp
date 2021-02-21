@@ -31,6 +31,19 @@ import {
   Col,
   UncontrolledTooltip,
 } from "reactstrap";
+import firebase from "firebase";
+
+const logout = async () => {
+
+  firebase.auth().signOut().then(() => {
+    console.log("signed out successfully!")
+    localStorage.removeItem('user')
+  }).catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+
+}
 
 export default function MainNav() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
@@ -87,6 +100,7 @@ export default function MainNav() {
               <Button
                 className="nav-link d-none d-lg-block"
                 color="primary"
+                onClick={logout}
                 to="/" tag={Link}
               >
                 <i className="tim-icons icon-spaceship" /> Log out

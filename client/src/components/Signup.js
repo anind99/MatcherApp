@@ -38,11 +38,33 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import firebase from "firebase";
+
+
+const signUpWithEmailPassword = async (email, password) => {
+
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ..
+      });
+
+
+}
 
 export default function Signup() {
-  const [fullNameFocus, setFullNameFocus] = React.useState(false);
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const [emailFocus, setEmailFocus] = React.useState(false);
   const [passwordFocus, setPasswordFocus] = React.useState(false);
+
+
   return (
     <div id="register" className="section section-signup">
       <Container>
@@ -53,12 +75,10 @@ export default function Signup() {
         <Row className="row-grid justify-content-between align-items-center">
           <Col lg="6">
             <h3 className="display-3 text-white">
-              Lorem ipsum dolor {" "}
-              <span className="text-white">consectetur adipiscing elit  sed do eiusmod</span>
+              <span className="text-white">Over the last year the world has gone through drastic changes.</span>
             </h3>
             <p className="text-white mb-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit massa enim nec dui nunc. Nunc aliquet bibendum enim facilisis gravida. At in tellus integer feugiat scelerisque varius morbi.
-            </p>
+               The pandemic has forced us to become more dependent on the internet than ever. As a result, people have been driven into solitude. We have developed “Matcher” to fix this problem. Get connected with people with similar interests as you with a click of a button! Learn more about yourself through the help of our AI!            </p>
             <div className="btn-wrapper">
               <Button className="btn-round" color="primary" to="login" tag={Link}>
                 Login
@@ -78,23 +98,6 @@ export default function Signup() {
                 <Form className="form">
                   <InputGroup
                     className={classnames({
-                      "input-group-focus": fullNameFocus,
-                    })}
-                  >
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="tim-icons icon-single-02" />
-                      </InputGroupText>
-                    </InputGroupAddon>
-                    <Input
-                      placeholder="Full Name"
-                      type="text"
-                      onFocus={(e) => setFullNameFocus(true)}
-                      onBlur={(e) => setFullNameFocus(false)}
-                    />
-                  </InputGroup>
-                  <InputGroup
-                    className={classnames({
                       "input-group-focus": emailFocus,
                     })}
                   >
@@ -105,9 +108,11 @@ export default function Signup() {
                     </InputGroupAddon>
                     <Input
                       placeholder="Email"
+                      value={email}
                       type="email"
                       onFocus={(e) => setEmailFocus(true)}
                       onBlur={(e) => setEmailFocus(false)}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </InputGroup>
                   <InputGroup
@@ -122,15 +127,17 @@ export default function Signup() {
                     </InputGroupAddon>
                     <Input
                       placeholder="Password"
+                      value={password}
                       type="password"
                       onFocus={(e) => setPasswordFocus(true)}
                       onBlur={(e) => setPasswordFocus(false)}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </InputGroup>
                 </Form>
               </CardBody>
               <CardFooter>
-                <Button className="btn-round" color="primary" size="lg" to="survey" tag={Link}>
+                <Button className="btn-round" color="primary" size="lg" onClick={()=>signUpWithEmailPassword(email, password)} to={"/survey"} tag={Link}>
                   Get Started
                 </Button>
               </CardFooter>

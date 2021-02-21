@@ -46,28 +46,13 @@ import {
 // core components
 import MainNav from "../../components/Navbars/MainNav.js";
 
-const carouselItems = [
-    {
-        src: require("../../assets/img/denys.jpg").default,
-        altText: "Slide 1",
-        caption: "Big City Life, United States",
-    },
-    {
-        src: require("../../assets/img/fabien-bazanegue.jpg").default,
-        altText: "Slide 2",
-        caption: "Somewhere Beyond, United States",
-    },
-    {
-        src: require("../../assets/img/mark-finn.jpg").default,
-        altText: "Slide 3",
-        caption: "Stocks, United States",
-    },
-];
-
 let ps = null;
 
+function typeOne(props){
+
+}
+
 export default function ProfilePage() {
-    const [tabs, setTabs] = React.useState(1);
     React.useEffect(() => {
         if (navigator.platform.indexOf("Win") > -1) {
             document.documentElement.className += " perfect-scrollbar-on";
@@ -90,44 +75,52 @@ export default function ProfilePage() {
         // Specify how to clean up after this effect:
 
     },[]);
+    let button;
     return (
         <>
             <MainNav />
+
             <div className="wrapper">
-                <div className="page-header">
+                <div className="section index-page" style={{padding:"200px 0 0"}}>
                     <img
                         alt="..."
                         className="dots"
                         src={require("../../assets/img/dots.png").default}
                     />
-                    <img
-                        alt="..."
-                        className="path"
-                        src={require("../../assets/img/path4.png").default}
-                    />
                     <Container className="align-items-center">
+                        <div className="squares square1" />
+                        <div className="squares square2" />
+                        <div className="squares square3" />
+                        <div className="squares square4" />
+                        <div className="squares square5" />
+                        <div className="squares square6" />
+                        <div className="squares square7" />
                         <Row>
                             <Col lg="6" md="6">
-                                <h1 className="profile-title text-center">First LastName</h1>
-                                <h5 className="text-on-back">Type</h5>
-                                <p className="profile-description">
-                                    Rock: -0.6355691415176077
-                                    Movies: -0.465875259673763
-                                    Elections: 1.1350806273387946
-                                    Judgment calls: 0.4291014076301618
-                                    Eating to survive: 0.5987948101991813
-                                    Giving: 1.1802984497589515
-                                    Storm: -0.7841156341045572
-                                    Classical music: 1.419609689232878
-                                    Rats: 0.654143863391764
-                                    Loneliness: -0.7076964880338388
-                                    Cheating in school: 0.6533113896467055
-                                    Appearence and gestures: 0.8180608593823635
-                                    Romantic: 0.5789733081199273
-                                    God: -1.0101851758166447
-                                    Science and technology: -0.9137388655138865
-                                    Number of friends: 1.1668396937540373
-                                </p>
+                                <h5 className="text-on-back">Type 1</h5>
+                                {(() => {
+                                    if (false) {
+                                        return (
+                                            //https://codepen.io/pen?editors=0010
+                                            <p className="profile-description">
+                                                You are a practical individual that values other’s opinions. You take diligent care of your diet and maintain your appearance. Compared to other types, you have more friends and are more giving. People in your type have a greater interest in politics, classical music and romance, and lesser interest in both religion, technology and movies. Lastly, you are not as scared by things such as rats and storms.
+                                            </p>
+                                        )
+                                    } else if (true) {
+                                        return (
+                                            <p className="profile-description">
+                                                You have an imaginative mind! Compared to other’s you have a greater inclination to Movies, Science and Art. You are more spiritual and usually have good dreams. Furthermore, you have more empathy than most individuals and as a result also feel more lonely. Most importantly, you are giving!
+                                            </p>
+                                        )
+                                    } else {
+                                        return (
+                                            <p className="profile-description">
+                                                You are a rockstar! You care less about other people’s opinions and follow your own goals. As a result you are slightly less empathetic. You are not as anxious as others and are essentially nonchalant. You enjoy food and rock and have less of an interest in Politics, Romance, Art, and Classical Music.
+                                            </p>
+                                        )
+                                    }
+                                })()}
+
                             </Col>
                         </Row>
                     </Container>
@@ -144,16 +137,16 @@ export default function ProfilePage() {
                         <thead>
                         <tr>
                             <th className="text-center">#</th>
-                            <th>Name</th>
+                            <th>Email</th>
                             <th>Type</th>
-                            <th className="text-right">Email</th>
+                            <th className="text-right">Send An Email</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td className="text-center">1</td>
-                            <td>Andrew Mike</td>
-                            <td>Type 1</td>
+                            <td>17@survey.com</td>
+                            <td>Type 2</td>
                             <td className="text-right">
                                 <Button className="btn-icon" color="info" size="sm" href={"mailto:em@i.l"}>
                                     <i className="fa fa-user"></i>
@@ -162,8 +155,8 @@ export default function ProfilePage() {
                         </tr>
                         <tr>
                             <td className="text-center">2</td>
-                            <td>Andrew Mike</td>
-                            <td>Type 1</td>
+                            <td>844@survey.com</td>
+                            <td>Type 2</td>
                             <td className="text-right">
                                 <Button className="btn-icon" color="info" size="sm" href={"mailto:em@i.l"}>
                                     <i className="fa fa-user"></i>
@@ -172,7 +165,7 @@ export default function ProfilePage() {
                         </tr>
                         <tr>
                             <td className="text-center">3</td>
-                            <td>Andrew Mike</td>
+                            <td>938@survey.com</td>
                             <td>Type 1</td>
                             <td className="text-right">
                                 <Button className="btn-icon" color="info" size="sm" href={"mailto:em@i.l"}>

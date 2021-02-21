@@ -20,6 +20,7 @@ import React from "react";
 import PageHeader from "../../components/PageHeader/PageHeader.js";
 import Signup from "../../components/Signup";
 
+
 export default function Index() {
     React.useEffect(() => {
         document.body.classList.toggle("index-page");
@@ -28,6 +29,8 @@ export default function Index() {
             document.body.classList.toggle("index-page");
         };
     }, []);
+
+
     return (
         <div className="wrapper">
             <PageHeader />

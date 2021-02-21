@@ -2,8 +2,9 @@ import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import "./styles.css";
+import firebase from "firebase";
 
-var defaultThemeColors = Survey
+let defaultThemeColors = Survey
     .StylesManager
     .ThemeColors["modern"];
 defaultThemeColors["$main-color"] = "#e91d1d";
@@ -19,8 +20,11 @@ Survey
     .applyTheme();
 
 class SurveyPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.onComplete = this.onComplete.bind(this);
 
-
+    }
     json = {
         "pages": [
             {
@@ -343,14 +347,26 @@ class SurveyPage extends React.Component {
             }
         ],
         "showCompletedPage": false,
-        "navigateToUrl": "www.google.com"
+        "navigateToUrl": "profile"
     }
     ;
 
     //Define a callback methods on survey complete
     onComplete(survey, options) {
         //Write survey results into database
-        console.log("Survey results: " + JSON.stringify(survey.data));
+/*        const db = firebase.firestore();
+
+        if(localStorage.getItem("user")){
+            db.collection("users").doc(localStorage.getItem("user")).set({
+                survey: JSON.stringify(survey.data)
+            }).then((docRef) => {
+                console.log("success adding")
+            })
+                .catch((error) => {
+                    console.error("Error adding user: ", error);
+                });
+            ;
+        }*/
     }
     render() {
 
